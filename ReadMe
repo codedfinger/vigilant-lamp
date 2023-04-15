@@ -1,0 +1,19 @@
+#Kippa App
+
+To configure and test this app; you need the following technologies
+
+1. download and install node js
+2. download and setup docker
+3. download and set up minikube
+
+Unzip the folder conataining the source code and all other files
+
+navigate to the directory where the project is downloaded and open in terminal.
+
+run `$make default` to build and deploy the application
+
+you need to edit the etc/host file to add the dns name on your machine
+use `$sudo -i gedit /etc/hosts` (assuming you use linux)
+Note: If you use windows you can see the steps to edit the host file on this link https://www.groovypost.com/howto/edit-hosts-file-windows-10/
+
+You can view the app on `www.kippa.local/profile`

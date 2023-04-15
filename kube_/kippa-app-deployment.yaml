@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kippa-app
+spec:
+  selector:
+    app: kippa-app
+  ports:
+    - port: 80
+      targetPort: 5001
+  type: LoadBalancer
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kippa-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kippa-app
+  template:
+    metadata:
+      labels:
+        app: kippa-app
+    spec:
+      containers:
+        - name: kippa-app
+          image: codedfingers/kippa-app
+          ports:
+            - containerPort: 5001
+          imagePullPolicy: Always
